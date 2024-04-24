@@ -9,16 +9,15 @@
     <script src="{{ asset('/js/app.js') }}"></script>
     @vite('resources/css/app.css')
 </head>
-
 <body>
-    <header class="w-full bg-gradient-to-r from-gray-800 to-gray-900 text-white py-4">
-        <div class="container text-left mx-12 ">
-            <h1 class="text-3xl font-bold text-left ">Sistem Pelayanan Perpustakaan LabGis</h1>
+    <header class=" bg-gradient-to-r from-slate-900 to-teal-950 text-white py-2">
+        <div class="text-left mx-12 ">
+            <h1 class="pb-2 bg-gradient-to-r from-zinc-50 to-white bg-clip-text text-transparent text-3xl font-bold text-stroke-2 text-left  border-b-2 stroke-zinc-50 webkit border-gray-800">Sistem Pelayanan Perpustakaan LabGis</h1>
         </div>
     </header>
     <div class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-slate-900 to-teal-950">
 
-        <div class="w-full max-w-xs">
+        <div class=" max-w-xs">
             <div class="flex justify-center mb-8">
                 <div class="relative">
                     <div
