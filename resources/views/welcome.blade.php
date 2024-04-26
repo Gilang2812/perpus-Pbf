@@ -17,6 +17,9 @@
             <h1 class="text-4xl font-bold">
                 Welcome to Laravel
             </h1>
+            <a href="{{ route('login') }}">Masuk</a>    
+            
         </div>
     </body>
 </html>
+

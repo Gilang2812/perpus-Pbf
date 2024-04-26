@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>LBIS | @yield('title')</title> <!-- Diubah sesuai instruksi -->
+    <title>LGIS | @yield('title')</title>
     <link rel="icon" type="image/webp" href="/logoGis.png">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
 <body>
