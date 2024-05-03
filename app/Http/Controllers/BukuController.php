@@ -24,6 +24,11 @@ class BukuController extends Controller
         return view('buku.createBuku', compact('posisi', 'penerbit'));
     }
 
+    public function indexKatalog(){
+        $buku = bukuModel::all();
+        return view('buku.katalogBuku', compact('buku'));
+    }
+
     public function insert(Request $request)
     {
         $validator = Validator::make($request->all(), [

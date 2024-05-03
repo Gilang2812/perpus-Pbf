@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\userModel; // Ubah userModel menjadi UserModel
+use App\Models\userModel;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -17,23 +17,20 @@ class AuthController extends Controller
 
     public function postLogin(Request $request)
     {
-        $email = $request->input('email');
-        $password = $request->input('password');
+        $credentials = request(['email', 'password']);
 
-        $user = userModel::where('email', $email)->first();
-
-        return response()->json([
-            'password_match' => Hash::check($password, $user->password),
-            'input_password' => $password,
-            'user_password' => $user->password
-        ]);
-        if (!$user || !Hash::check($password, $user->password)) {
-            return response()->json(['message' => 'Email atau password salah'], 401);
+        if (Auth::attempt($credentials)) {
+            // Autentikasi berhasil
+        $user = Auth::user();
+            if ($user->isAdmin) {
+                return redirect('/admin/dashboard');
+            } else {
+                return redirect('/homepage');
+            }
+        } else {
+            // Autentikasi gagal
+            return back()->withErrors(['login_error' => 'Email atau password salah']);
         }
-
-        $token = $user->createToken('api_token')->plainTextToken;
-
-        return response()->json(['token' => $token], 200);
     }
 
     public function getRegister()

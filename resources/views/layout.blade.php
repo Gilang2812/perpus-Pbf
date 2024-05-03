@@ -28,7 +28,7 @@
             <a href="">Pengguna</a>
         </nav>
     </header>
-    <main>
+    <main class="bg-[#FAFBFC]">
         @yield('content')
     </main>
 </body>
